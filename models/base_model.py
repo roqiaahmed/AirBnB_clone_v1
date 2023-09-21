@@ -8,7 +8,7 @@ from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
 
-if models.storage_type == "db":
+if models.storage_t == "db":
     Base = declarative_base()
 else:
     Base = object
@@ -17,7 +17,7 @@ else:
 class BaseModel:
     """A base class for all hbnb models"""
 
-    if models.storage_type == "db":
+    if models.storage_t == "db":
         id = Column(String(60), unique=True, primary_key=True, nullable=False)
         created_at = Column(datetime, nullable=False, default=datetime.utcnow())
         updated_at = Column(datetime, nullable=False, default=datetime.utcnow())
