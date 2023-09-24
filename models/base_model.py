@@ -3,12 +3,12 @@
 from datetime import datetime
 import models
 from os import getenv
-import sqlalchemy
 from sqlalchemy import Column, String, DateTime
+from models.__init__ import storage, storage_t
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
 
-if models.storage_t == "db":
+if storage_t == "db":
     Base = declarative_base()
 else:
     Base = object
