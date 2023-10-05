@@ -16,7 +16,7 @@ def do_pack():
         time = datetime.now().strftime('%Y%m%d%H%M%S')
         archive_name = 'web_static_{}.tgz'.format(time)
         archive_path = 'versions/{}'.format(archive_name)
-        local('tar -cavf {} web_static'.format(archive_path))
+        local('tar -czvf {} web_static'.format(archive_path))
         print("web_static packed: {} -> {}Bytes".format(archive_path, os.path.getsize(archive_path)))
     except:
         return None
