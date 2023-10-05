@@ -11,7 +11,7 @@ echo "<html>
     Holberton School
   </body>
 </html>" > /data/web_static/releases/test/index.html
-sudo ln -s /data/web_static/releases/test/ /data/web_static/current
+sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 sed -i "61i\ \n\tlocation /hbnb_static {\n\t\talias /data/web_static/current;\n\t\tautoindex off;\n\t}" /etc/nginx/sites-available/default
 sudo service nginx restart
