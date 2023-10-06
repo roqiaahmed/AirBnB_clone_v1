@@ -5,8 +5,9 @@ Fabric script that Generates a .tgz archive
 from fabric.api import *
 from datetime import datetime
 import os
-env.hosts = ['	54.157.165.199', '54.237.14.178']
+env.hosts = ['54.157.165.199', '54.237.14.178']
 env.user = 'ubuntu'
+
 def do_pack():
     '''
     Generates a tgz archive from the
